@@ -5,7 +5,8 @@ import {Task} from "../app/shared/models/task.model";
 
 @Injectable({
   providedIn: 'root'
-})
+}
+)
 export class TaskStorageService {
 
   tasks: Task[] = [];
