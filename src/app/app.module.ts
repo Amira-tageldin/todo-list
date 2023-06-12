@@ -8,6 +8,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { TaskEditComponent } from './task-edit/task-edit.component';
 import { TaskViewComponent } from './task-view/task-view.component';
 import { TaskAddComponent } from './task-add/task-add.component';
+import { StoreModule } from '@ngrx/store';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { TaskAddComponent } from './task-add/task-add.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [],
   bootstrap: [AppComponent]
