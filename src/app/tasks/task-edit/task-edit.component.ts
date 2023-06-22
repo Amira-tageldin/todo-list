@@ -1,8 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
-import {Task} from "../shared/models/task.model";
-import {TaskStorageService} from "../task-storage.service";
+
 import {Router, ActivatedRoute} from '@angular/router';
+import { Task } from 'src/app/shared/models/task.model';
+import { TaskStorageService } from '../task-storage.service';
+import { Store } from '@ngrx/store';
+import * as fromStore from '../../store';
 
 @Component({
   selector: 'app-task-edit',
@@ -29,7 +32,7 @@ export class TaskEditComponent implements OnInit {
   note = new FormControl('');
 
 
-  constructor(private storage: TaskStorageService, private route: ActivatedRoute, private router: Router) {
+  constructor(private storage: TaskStorageService, private route: ActivatedRoute, private router: Router , private store : Store<fromStore.DataState>) {
   }
 
   /**
@@ -42,6 +45,8 @@ export class TaskEditComponent implements OnInit {
       this.note.setValue(this.task.note);
       this.title.setValue(this.task.title);
     });
+
+    
   }
 
   /**

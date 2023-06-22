@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 
-import {init_tasks} from '../assets/todo-list.json';
-import {Task} from "../app/shared/models/task.model";
+import {init_tasks} from '../../assets/todo-list.json';
+import {Task} from "../shared/models/task.model";
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -22,9 +23,11 @@ export class TaskStorageService {
   /**
    * Returns all tasks
    */
-  getTasks(): Task[] {
+  getTasks(): Observable< Task[]> {
     this.init();
-    return this.tasks;
+
+   // console.log(this.tasks) ;
+    return of( this.tasks);
   }
 
   /**

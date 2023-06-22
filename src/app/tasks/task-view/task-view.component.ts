@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Task} from "../shared/models/task.model";
+import {Task} from "../../shared/models/task.model";
 import {TaskStorageService} from "../task-storage.service";
 import {Router, ActivatedRoute} from '@angular/router';
 
@@ -19,6 +19,7 @@ export class TaskViewComponent implements OnInit {
    *  Load task from route id parameter
    */
   ngOnInit() {
+    console.log('lll');
     this.route.paramMap.subscribe(params => {
       this.task = this.storage.get(params.get('id'));
     });

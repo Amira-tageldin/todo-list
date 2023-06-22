@@ -21,6 +21,7 @@ export class TaskAddComponent {
   note = new FormControl('');
 
   constructor(private storage: TaskStorageService, private router: Router) {
+    console.log('hiiii');
   }
 
   /**
