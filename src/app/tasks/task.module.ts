@@ -7,7 +7,7 @@ import { TaskViewComponent } from './task-view/task-view.component';
 import { TaskEditComponent } from './task-edit/task-edit.component';
 import { TaskAddComponent } from './task-add/task-add.component';
 import { StoreModule, reduceState } from '@ngrx/store';
-import { effect, reducers } from '../store';
+import { effect, reducers } from '../tasks/store';
 import { TodoComponent } from './todo/todo.component';
 import { EffectsModule } from '@ngrx/effects';
 

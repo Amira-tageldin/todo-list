@@ -3,8 +3,8 @@ import {Component, OnInit} from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Task } from 'src/app/shared/models/task.model';
 import { TaskStorageService } from '../task-storage.service';
-import * as fromStore from 'src/app/store';
-import { TaskState } from 'src/app/store/reducers/data.reducer';
+import * as fromStore from 'src/app/tasks/store';
+import { TaskState } from 'src/app/tasks/store/reducers/data.reducer';
 import { Observable } from 'rxjs';
 
 
@@ -24,7 +24,7 @@ export class TodoComponent implements OnInit {
    * Load tasks on init
    */
   ngOnInit() : void{
-    console.log('you are sooo clever Amira , Just trust on yourself!!!');
+    
    this.storage.init();
   // this.tasks = this.storage.getTasks();
    //console.log(this.store) ;

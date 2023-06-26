@@ -2,13 +2,14 @@ import { Task } from "src/app/shared/models/task.model"
 import * as fromActions from '../actions/data.action'
 
  export  interface TaskState {
-    data:Task[] ,
+    entities:{[id:number] :  Task }
+   // data:Task[] ,
     loading:Boolean ,
     loaded :Boolean
 }
 
 export const intialState : TaskState={
-    data:[] ,
+    entities:{} ,
     loading:false ,
     loaded:false
 
@@ -26,9 +27,22 @@ export function reducer (state=intialState , action:fromActions.dataActions) : T
         case fromActions.Load_Task_Succeeded:{
 
             const data  = action.payload;
+
+const entities=data.reduce((entities , task) =>{
+    return {
+        ...entities , [task.id]:task
+    };
+
+} ,
+{...state.entities}
+
+);
+
+
+
             console.log(action.payload)
             return {
-                ...state ,loaded:true,loading:false , data
+                ...state ,loaded:true,loading:false , entities
             }
 
 
@@ -52,4 +66,4 @@ export function reducer (state=intialState , action:fromActions.dataActions) : T
 
 export const getTaskLoading =(state:TaskState) => state.loading ;
 export const getTaskLoaded =(state:TaskState) => state.loaded ;
-export const getAllTasks =(state:TaskState) => state.data ;
+export const getTasksentities =(state:TaskState) => state.entities ;

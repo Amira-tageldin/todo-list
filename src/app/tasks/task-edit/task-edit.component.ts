@@ -5,7 +5,7 @@ import {Router, ActivatedRoute} from '@angular/router';
 import { Task } from 'src/app/shared/models/task.model';
 import { TaskStorageService } from '../task-storage.service';
 import { Store } from '@ngrx/store';
-import * as fromStore from '../../store';
+import * as fromStore from '../../tasks/store';
 
 @Component({
   selector: 'app-task-edit',

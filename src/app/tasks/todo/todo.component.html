@@ -2,7 +2,8 @@
 <button class="btn btn-success" [routerLink]="['tasks/add']">New task</button>
 
 
-<div *ngIf="((tasks$ |async  ).length > 0 )  as tasks; else noTasks ">
+<div *ngIf="tasks$ |async   as tasks; else noTasks ">
+  <pre>{{tasks | json}}</pre>
   <table class="table table-striped">
     <thead>
     <tr>
@@ -12,7 +13,7 @@
       <th></th>
     </tr>
     </thead>
-    <tbody *ngFor="let task of tasks$ |async">
+    <tbody *ngFor="let task  of tasks">
      
     <tr>
       <td>{{ task.id }}</td>

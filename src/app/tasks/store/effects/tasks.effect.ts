@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import {Actions, Effect, createEffect, ofType} from '@ngrx/effects';
-import * as fromAcctions from '../actions/data.action'
-import {catchError, map, switchMap}  from 'rxjs/operators'
+import * as fromAcctions from '../actions/data.action';
+import {catchError, map, switchMap}  from 'rxjs/operators';
 import { TaskStorageService } from "src/app/tasks/task-storage.service";
 import { of } from "rxjs";
 @Injectable()
